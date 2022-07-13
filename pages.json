@@ -3,16 +3,13 @@
 		{
 			"path": "pages/index/index", // 首页
 			"style": {}
-		},
-		{
-			"path": "pages/classroom/index", // 讲堂
-			"style": {}
 		}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#F8F8F8",
+		"navigationStyle": "custom"
 	}
 }

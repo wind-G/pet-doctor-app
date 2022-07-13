@@ -39,15 +39,42 @@
 		},
 		props:{
 			// 固定底部
-			tabList:{
-				type:Array,
+			fixedBottom:{
+				type:Boolean,
 				default:true
 			}
 		},
 		data() {
 			return {
 				prevIndex:-1,
-				current:0
+				current:0,
+				tabList:[
+					{
+						"icon":"icon-shouyefill",
+						"text":"首页",
+						"url": "/page/index/index" 
+					},
+					{
+						"icon":"icon-shipin6",
+						"text":"讲堂",
+						"url": "/page/classroom/index" 
+					},
+					{
+						"icon":"icon-yiyuan-2",
+						"text":"附近医院",
+						"url": "" 
+					},
+					{
+						"icon":"icon-chongwutubiao18",
+						"text":"挂号就诊",
+						"url": "" 
+					},
+					{
+						"icon":"icon-chongwu",
+						"text":"我的",
+						"url": "" 
+					},
+				]
 			};
 		},
 		computed:{
@@ -59,10 +86,13 @@
 		methods:{
 			change(index, row){
 				if(this.current == index)return;
-				// this.prevIndex = this.current;
+				this.prevIndex = this.current;
 				this.current = index;
-				console.log("打开到应用的某个页面", index)
-				this.$emit('tabChange', index);
+				console.log("打开到应用的某个页面", row.url)
+				// 关闭其它页面，打开到应用的某个页面
+				uni.reLaunch({
+					url: row.url
+				});
 			}
 		}
 	}
@@ -80,7 +110,7 @@
 	bottom: 0;
 	z-index: 99;
 	.bar{
-		background-color: #ffffff;
+		background-color: #f2f2f2;
 	}
 	
 	// 凸起
@@ -99,7 +129,7 @@
 			width: 300rpx;
 			height: 600rpx;
 			border-radius: 50%;
-			background-color: #ffffff;
+			background-color: #f2f2f2;
 			position: absolute;
 			top: 0;
 			left: 50%;
