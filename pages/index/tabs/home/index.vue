@@ -96,7 +96,7 @@
 				<view class="block-title">
 					<text class="block-text">常见问题处理</text>
 				</view>
-				<view class="home-issue-type">
+				<view class="home-issue-type"> 
 					<view class="issue-type">
 						<view class="issue-type-item issue-ative"><text>饮食</text></view>
 						<view class="issue-type-item"><text>疾病</text></view>
@@ -117,13 +117,105 @@
 			</view>	
 		</view>
 		
-		<view style="height: 300rpx;display: block;"></view>
+		<!-- 附近宠物医院 -->
+		<view class="nearby-hospital home-top">
+			<view class="home-nearby">
+				<view class="block-title">
+					<text class="block-text">附近宠物医院</text>
+					<view class="block-link">更多<text class="iconfont icon-jiantouyou"></text></view>
+				</view>
+				<view class="nearby-type">
+					<view class="nearby-ative">综合排序</view>
+					<view>医院</view>
+					<view>店面</view>
+					<view>距离优先</view>
+					<view>价格优先</view>
+					<view>其它</view>
+				</view>
+				<view class="nearby-wrap">
+					<view class="nearby-item">
+						<image class="nearby-img" src="/static/images/1.jpg"></image>
+						<view class="nearby-box">
+							<view class="nearby-left">
+								<view class="nearby-title">联合动物医院</view>
+								<view class="nearby-position">
+									<text class="near-m">303m</text>
+									<text class="near-s"></text>
+									<text class="near-j">重庆渝中区秋华大道306号</text>
+								</view>
+								<view class="nearby-praise">
+									<view>好评率：<text>4.5</text></view>
+									<view>点赞数：<text>3030</text></view>
+								</view>
+							</view>
+							<view class="nearby-right">
+								<view class="nearby-map iconfont icon-fujindianbanben2"></view>
+								<view class="nearby-button">预约挂号</view>
+							</view>
+						</view>
+					</view>
+					<view class="nearby-item">
+						<image class="nearby-img" src="/static/images/1.jpg"></image>
+						<view class="nearby-box">
+							<view class="nearby-left">
+								<view class="nearby-title">好伴爱动物医院</view>
+								<view class="nearby-position">
+									<text class="near-m">3.6km</text>
+									<text class="near-s"></text>
+									<text class="near-j">重庆渝杯区南湖总院112号</text>
+								</view>
+								<view class="nearby-praise">
+									<view>好评率：<text>4.4</text></view>
+									<view>点赞数：<text>2148</text></view>
+								</view>
+							</view>
+							<view class="nearby-right">
+								<view class="nearby-map iconfont icon-fujindianbanben2"></view>
+								<view class="nearby-button">预约挂号</view>
+							</view>
+						</view>
+					</view>
+					<view class="nearby-item">
+						<image class="nearby-img" src="/static/images/1.jpg"></image>
+						<view class="nearby-box">
+							<view class="nearby-left">
+								<view class="nearby-title">刘磊动物医院</view>
+								<view class="nearby-position">
+									<text class="near-m">2.5km</text>
+									<text class="near-s"></text>
+									<text class="near-j">重庆南岸区南坪街道46号</text>
+								</view>
+								<view class="nearby-praise">
+									<view>好评率：<text>4.2</text></view>
+									<view>点赞数：<text>1984</text></view>
+								</view>
+							</view>
+							<view class="nearby-right">
+								<view class="nearby-map iconfont icon-fujindianbanben2"></view>
+								<view class="nearby-button">预约挂号</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+			
+			<!-- loadmore -->
+			<view class="loadmore">
+			  <text class="loadmore-text" v-if="loadmoreState === 'loadmore'">上拉加载更多</text>
+			  <text class="loadmore-text" v-else-if="loadmoreState === 'loading'">正在加载...</text>
+			  <text class="loadmore-text" v-else-if="loadmoreState === 'nomore'">没有更多了</text>
+			</view>
+		</view>
+		
+		<bar-inset></bar-inset>
 	</view>
 </template>
 
 <script>
+	import BarInset from "@/components/bar-inset/index.vue"
 	export default {
 		components: {
+			BarInset,
 		},
 		data() {
 			return {
@@ -155,6 +247,7 @@
 						"info": "这是一个内容555"
 					},
 				],
+        loadmoreState: 'loadmore'
 			}
 		},
 		onLoad() {
@@ -487,6 +580,130 @@
 					border-radius: 10rpx;
 				}
 			}
+		}
+	}
+	.nearby-hospital{
+		width: 100%;
+		display: block;
+		.home-nearby{
+			width: 100%;
+			padding: 30rpx 30rpx;
+			box-sizing: border-box;
+			background-color: #ffffff;
+			border-radius: 50rpx;
+			.nearby-type{
+			  width: 100%;
+				view{
+					width: 150rpx;
+					height: 40rpx;
+					line-height: 40rpx;
+					text-align: center;
+					border: 1px solid #f2f2f2;
+					border-radius: 50rpx;
+					background-color: #f2f2f2;
+					font-size: 24rpx;
+					color: #666666;
+					display: inline-block;
+					vertical-align: middle;
+					margin-top: 20rpx;
+					margin-right: 15rpx;
+				}
+				.nearby-ative{
+					border: 1px solid #1dbfdf;
+					background-color: #1dbfdf;
+					color: #ffffff;
+				}
+			}
+			.nearby-wrap{
+			  width: 100%;
+			  display: block;
+				.nearby-item{
+					padding: 30rpx 0rpx;
+					box-sizing: border-box;
+					display: flex;
+					align-items: center;
+					.nearby-img{
+						width: 150rpx;
+						height: 150rpx;
+						border-radius: 10rpx;
+					}
+					.nearby-box{
+						flex: 1;
+						margin-left: 20rpx;
+						display: flex;
+						align-items: center;
+						.nearby-left{
+							flex: 1;
+							.nearby-title{
+								width: 100%;
+								display: block;
+								font-size: 26rpx;
+								color: #333333;
+								font-weight: bold;
+							}
+							.nearby-position{
+								width: 100%;
+								display: flex;
+								align-items: center;
+								margin-top: 10rpx;
+								text{
+									font-size: 22rpx;
+									color: #999999;
+									display: inline-block;
+								}
+								.near-s{
+									width: 1px;
+									height: 22rpx;
+									background-color: #e2e2e2;
+									margin: 3rpx 15rpx 0rpx;
+								}
+							}
+							.nearby-praise{
+								width: 100%;
+								display: flex;
+								align-items: center;
+								margin-top: 10rpx;
+								view{
+									font-size: 22rpx;
+									color: #999999;
+									margin-right: 20rpx;
+								}
+							}
+						}
+						.nearby-right{
+							text-align: center;
+							.nearby-map{
+								font-size: 54rpx;
+								color: #999999;
+								display: block;
+								margin: auto;
+							}
+							.nearby-button{
+								width: 120rpx;
+								height: 46rpx;
+								line-height: 46rpx;
+								display: block;
+								font-size: 24rpx;
+								color: #ffffff;
+								background-color: #1dbfdf;
+								border-radius: 6rpx;
+								margin:6rpx auto 0rpx;
+							}
+						}
+					}
+				}
+			}
+		}
+		.loadmore {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 72rpx;
+		}
+		.loadmore-text {
+			font-size: 26rpx;
+			font-weight: 700;
 		}
 	}
 </style>
