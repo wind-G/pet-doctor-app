@@ -1,5 +1,5 @@
 <template>
-  <view class="bar-inset" style="height: 100rpx;"></view>
+  <view class="bar-inset" style="height: 150rpx;"></view>
 </template>
 
 <script>

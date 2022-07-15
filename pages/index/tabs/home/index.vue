@@ -134,65 +134,77 @@
 				</view>
 				<view class="nearby-wrap">
 					<view class="nearby-item">
-						<image class="nearby-img" src="/static/images/1.jpg"></image>
-						<view class="nearby-box">
-							<view class="nearby-left">
-								<view class="nearby-title">联合动物医院</view>
-								<view class="nearby-position">
-									<text class="near-m">303m</text>
-									<text class="near-s"></text>
-									<text class="near-j">重庆渝中区秋华大道306号</text>
+						<view class="nearby-item-wrap">
+							<image class="nearby-img" src="/static/images/1.jpg"></image>
+							<view class="nearby-box">
+								<view class="nearby-left">
+									<view class="nearby-title">联合动物医院</view>
+									<view class="nearby-feature">
+										<view class="nearby-feature-title">特色:</view>
+										<view class="nearby-feature-text">幽门螺旋杆检测</view>
+									</view>
+									<view class="nearby-position">
+										<text class="near-m">303m</text>
+										<text class="near-s"></text>
+										<view class="nearby-map iconfont icon-fujindianbanben2"></view>
+										<text class="near-j">重庆渝中区秋华大道306号</text>
+									</view>
+									<view class="nearby-praise">
+										<view>好评率：<text>4.5</text></view>
+										<view>点赞数：<text>3030</text></view>
+										<view>收藏量：<text>1030</text></view>
+									</view>
 								</view>
-								<view class="nearby-praise">
-									<view>好评率：<text>4.5</text></view>
-									<view>点赞数：<text>3030</text></view>
-								</view>
-							</view>
-							<view class="nearby-right">
-								<view class="nearby-map iconfont icon-fujindianbanben2"></view>
-								<view class="nearby-button">预约挂号</view>
 							</view>
 						</view>
 					</view>
 					<view class="nearby-item">
-						<image class="nearby-img" src="/static/images/1.jpg"></image>
-						<view class="nearby-box">
-							<view class="nearby-left">
-								<view class="nearby-title">好伴爱动物医院</view>
-								<view class="nearby-position">
-									<text class="near-m">3.6km</text>
-									<text class="near-s"></text>
-									<text class="near-j">重庆渝杯区南湖总院112号</text>
+						<view class="nearby-item-wrap">
+							<image class="nearby-img" src="/static/images/1.jpg"></image>
+							<view class="nearby-box">
+								<view class="nearby-left">
+									<view class="nearby-title">联合动物医院</view>
+									<view class="nearby-feature">
+										<view class="nearby-feature-title">特色:</view>
+										<view class="nearby-feature-text">幽门螺旋杆检测</view>
+									</view>
+									<view class="nearby-position">
+										<text class="near-m">303m</text>
+										<text class="near-s"></text>
+										<view class="nearby-map iconfont icon-fujindianbanben2"></view>
+										<text class="near-j">重庆渝中区秋华大道306号</text>
+									</view>
+									<view class="nearby-praise">
+										<view>好评率：<text>4.5</text></view>
+										<view>点赞数：<text>3030</text></view>
+										<view>收藏量：<text>1030</text></view>
+									</view>
 								</view>
-								<view class="nearby-praise">
-									<view>好评率：<text>4.4</text></view>
-									<view>点赞数：<text>2148</text></view>
-								</view>
-							</view>
-							<view class="nearby-right">
-								<view class="nearby-map iconfont icon-fujindianbanben2"></view>
-								<view class="nearby-button">预约挂号</view>
 							</view>
 						</view>
 					</view>
 					<view class="nearby-item">
-						<image class="nearby-img" src="/static/images/1.jpg"></image>
-						<view class="nearby-box">
-							<view class="nearby-left">
-								<view class="nearby-title">刘磊动物医院</view>
-								<view class="nearby-position">
-									<text class="near-m">2.5km</text>
-									<text class="near-s"></text>
-									<text class="near-j">重庆南岸区南坪街道46号</text>
+						<view class="nearby-item-wrap">
+							<image class="nearby-img" src="/static/images/1.jpg"></image>
+							<view class="nearby-box">
+								<view class="nearby-left">
+									<view class="nearby-title">联合动物医院</view>
+									<view class="nearby-feature">
+										<view class="nearby-feature-title">特色:</view>
+										<view class="nearby-feature-text">幽门螺旋杆检测</view>
+									</view>
+									<view class="nearby-position">
+										<text class="near-m">303m</text>
+										<text class="near-s"></text>
+										<view class="nearby-map iconfont icon-fujindianbanben2"></view>
+										<text class="near-j">重庆渝中区秋华大道306号</text>
+									</view>
+									<view class="nearby-praise">
+										<view>好评率：<text>4.5</text></view>
+										<view>点赞数：<text>3030</text></view>
+										<view>收藏量：<text>1030</text></view>
+									</view>
 								</view>
-								<view class="nearby-praise">
-									<view>好评率：<text>4.2</text></view>
-									<view>点赞数：<text>1984</text></view>
-								</view>
-							</view>
-							<view class="nearby-right">
-								<view class="nearby-map iconfont icon-fujindianbanben2"></view>
-								<view class="nearby-button">预约挂号</view>
 							</view>
 						</view>
 					</view>
@@ -200,11 +212,7 @@
 			</view>
 			
 			<!-- loadmore -->
-			<view class="loadmore">
-			  <text class="loadmore-text" v-if="loadmoreState === 'loadmore'">上拉加载更多</text>
-			  <text class="loadmore-text" v-else-if="loadmoreState === 'loading'">正在加载...</text>
-			  <text class="loadmore-text" v-else-if="loadmoreState === 'nomore'">没有更多了</text>
-			</view>
+			<Loadmore :loadmoreState="loadmoreState"></Loadmore>
 		</view>
 		
 		<bar-inset></bar-inset>
@@ -213,9 +221,12 @@
 
 <script>
 	import BarInset from "@/components/bar-inset/index.vue"
+	import Loadmore from "@/components/loadmore/index.vue" // 加载
 	export default {
+    name: 'Home',
 		components: {
 			BarInset,
+			Loadmore, 
 		},
 		data() {
 			return {
@@ -618,10 +629,15 @@
 			  width: 100%;
 			  display: block;
 				.nearby-item{
+					width: 100%;
+					display: block;
 					padding: 30rpx 0rpx;
 					box-sizing: border-box;
-					display: flex;
-					align-items: center;
+					.nearby-item-wrap{
+						width: 100%;
+						display: flex;
+						align-items: center;
+					}
 					.nearby-img{
 						width: 150rpx;
 						height: 150rpx;
@@ -637,9 +653,27 @@
 							.nearby-title{
 								width: 100%;
 								display: block;
-								font-size: 26rpx;
+								font-size: 32rpx;
 								color: #333333;
-								font-weight: bold;
+							}
+							.nearby-feature{
+								width: 100%;
+								display: flex;
+								align-items: center;
+								.nearby-feature-title{
+									font-size: 28rpx;
+									color: #333333;
+									font-weight: bold;
+									margin-right: 10rpx;
+								}
+								.nearby-feature-text{
+									width: 60%;
+									font-size: 28rpx;
+									color: #333333;
+									overflow: hidden;
+									text-overflow: ellipsis;
+									white-space: nowrap;
+								}
 							}
 							.nearby-position{
 								width: 100%;
@@ -647,15 +681,27 @@
 								align-items: center;
 								margin-top: 10rpx;
 								text{
-									font-size: 22rpx;
+									font-size: 24rpx;
 									color: #999999;
 									display: inline-block;
 								}
 								.near-s{
 									width: 1px;
-									height: 22rpx;
+									height: 24rpx;
 									background-color: #e2e2e2;
 									margin: 3rpx 15rpx 0rpx;
+								}
+								.near-j{
+									width: 70%;
+									overflow: hidden;
+									text-overflow: ellipsis;
+									white-space: nowrap;
+								}
+								.nearby-map{
+									font-size: 38rpx;
+									color: #999999;
+									display: block;
+									margin: auto;
 								}
 							}
 							.nearby-praise{
@@ -670,7 +716,7 @@
 								}
 							}
 						}
-						.nearby-right{
+						/* .nearby-right{
 							text-align: center;
 							.nearby-map{
 								font-size: 54rpx;
@@ -689,21 +735,10 @@
 								border-radius: 6rpx;
 								margin:6rpx auto 0rpx;
 							}
-						}
+						} */
 					}
 				}
 			}
-		}
-		.loadmore {
-			width: 100%;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 72rpx;
-		}
-		.loadmore-text {
-			font-size: 26rpx;
-			font-weight: 700;
 		}
 	}
 </style>

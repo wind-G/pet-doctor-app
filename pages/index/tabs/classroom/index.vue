@@ -1,8 +1,8 @@
 <template>
 	<view class="clssroom">
-		<Inset></Inset>
+		<!-- <Inset></Inset> -->
 		<!-- type -->
-		<view class="clssroom-header">
+		<view class="clssroom-header" style="margin-top: 56rpx;">
 			<scroll-view class="room-header-type" :scroll-x="true" :show-scrollbar="true">
 				<view :class="roomTypeIndex == 1?'room-type-ative':''" @click="roomTypeClick(1)">推荐</view>
 				<view :class="roomTypeIndex == 2?'room-type-ative':''" @click="roomTypeClick(2)">饮食</view>
@@ -52,12 +52,7 @@
 					</view>
 				</view>
 			</view>
-			<!-- loadmore -->
-			<view class="loadmore">
-			  <text class="loadmore-text" v-if="loadmoreState === 'loadmore'">上拉加载更多</text>
-			  <text class="loadmore-text" v-else-if="loadmoreState === 'loading'">正在加载...</text>
-			  <text class="loadmore-text" v-else-if="loadmoreState === 'nomore'">没有更多了</text>
-			</view>
+			<Loadmore :loadmoreState="loadmoreState"></Loadmore>
 		</view>
 		
 		<bar-inset></bar-inset>
@@ -65,12 +60,15 @@
 </template>
 
 <script>
-	import Inset from "@/components/inset/index.vue"
-	import BarInset from "@/components/bar-inset/index.vue"
+	import Inset from "@/components/inset/index.vue" // 头部高度
+	import BarInset from "@/components/bar-inset/index.vue" // 底部块高度
+	import Loadmore from "@/components/loadmore/index.vue" // 加载
 	export default {
+    name: 'Classroom',
 		components: {
 			Inset,
 			BarInset,
+			Loadmore, // 
 		},
 		data() {
 			return {
@@ -331,16 +329,5 @@
 		text{
 			font-size: 26rpx;
 		}
-	}
-	.loadmore {
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 72rpx;
-	}
-	.loadmore-text {
-		font-size: 26rpx;
-		font-weight: 700;
 	}
 </style>
